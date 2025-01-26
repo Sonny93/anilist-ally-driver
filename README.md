@@ -11,7 +11,7 @@ To create a new release, you can use the Github interface or do it from the comm
 
 To do this, add the following variable to your `GITHUB_TOKEN` terminal (this depends on your OS).
 
-``shell
+```shell
 make release
 # or (both commands do the same thing)
 pnpm release
