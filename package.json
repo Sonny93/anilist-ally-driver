@@ -35,6 +35,10 @@
   },
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sonny93/anilist-ally-driver"
+  },
   "keywords": [
     "social-auth",
     "adonisjs-ally",
