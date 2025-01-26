@@ -1,0 +1,2 @@
+release:
+	pnpm release
