@@ -1,8 +1,31 @@
-### Anilist Ally Driver
+### Getting Started
 
 To use this package, use the following command in your Adonis V6 project:
 ```shell
-node ace configure sonny93/anilist-ally-driver
+node ace configure anilist-ally-driver
+```
+
+### Usage
+
+In your `config/ally.ts`
+```typescript
+import env from '#start/env';
+import { defineConfig } from '@adonisjs/ally';
+import { AniListDriverService } from 'anilist-ally-driver/build/index.js';
+
+const allyConfig = defineConfig({
+  anilist: AniListDriverService({
+    clientId: env.get('ANILIST_CLIENT_ID'),
+    clientSecret: env.get('ANILIST_CLIENT_SECRET'),
+    callbackUrl: 'http://localhost:3333/auth/anilist/callback',
+  }),
+});
+
+export default allyConfig;
+
+declare module '@adonisjs/ally/types' {
+  interface SocialProviders extends InferSocialProviders<typeof allyConfig> {}
+}
 ```
 
 ### Creating a new release
